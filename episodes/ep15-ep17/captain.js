@@ -220,7 +220,7 @@ export async function main(ns) {
 			// Delete assigned from list of fleets
 			for (var ship of Object.keys(assigned)) {
 				var usage = assigned[ship];
-				if (usage.left <= 1) { // useless if only 1 thread left
+				if (usage.left <= 2) { // useless if only 1 thread left, increased to 2 to not break warmonger
 					delete ships[ship];
 				} else {
 					ships[ship] = usage.left;
